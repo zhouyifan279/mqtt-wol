@@ -14,25 +14,25 @@ public final class SSHProperties {
     public final static String PASSWORD;
 
     static {
-        String address = System.getenv("SSH_HOST");
+        String address = System.getenv("MW_SSH_HOST");
         if (address == null || address.isBlank()) {
             address = "127.0.0.1";
         }
         HOST = address;
 
-        String port = System.getenv("SSH_PORT");
+        String port = System.getenv("MW_SSH_PORT");
         if (port == null || port.isBlank()) {
             port = "22";
         }
         PORT = Integer.parseInt(port);
 
-        String username = System.getenv("SSH_USERNAME");
+        String username = System.getenv("MW_SSH_USERNAME");
         if (username == null || username.isBlank()) {
             username = "root";
         }
         USERNAME = username;
 
-        String password = System.getenv("SSH_PASSWORD");
+        String password = System.getenv("MW_SSH_PASSWORD");
         if (password == null || password.isBlank()) {
             password = "pa55w0rd!";
         }
