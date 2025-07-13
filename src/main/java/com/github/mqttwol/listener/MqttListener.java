@@ -1,10 +1,10 @@
 package com.github.mqttwol.listener;
 
 import com.github.mqttwol.properties.MqttProperties;
-import com.github.mqttwol.properties.WinRMProperties;
+import com.github.mqttwol.properties.SSHProperties;
 import com.github.mqttwol.properties.WolProperties;
 import com.github.mqttwol.util.LogUtils;
-import com.github.mqttwol.util.WinRMUtils;
+import com.github.mqttwol.util.SshUtils;
 import com.github.mqttwol.util.WolUtils;
 import net.dreamlu.iot.mqtt.codec.MqttVersion;
 import net.dreamlu.iot.mqtt.core.client.IMqttClientConnectListener;
@@ -56,8 +56,8 @@ public final class MqttListener {
             LogUtils.info("执行开机成功");
         } else if ("off".equalsIgnoreCase(message)) {
             LogUtils.info("开始执行关机");
-            WinRMUtils.powerOff(WinRMProperties.ADDRESS, WinRMProperties.PORT,
-                    WinRMProperties.USERNAME, WinRMProperties.PASSWORD);
+            SshUtils.powerOff(SSHProperties.HOST, SSHProperties.PORT, SSHProperties.USERNAME,
+                    SSHProperties.PASSWORD);
             LogUtils.info("执行关机成功");
         } else {
             LogUtils.info("未定义的操作");

@@ -21,6 +21,7 @@
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <jaxb-impl.version>2.3.9</jaxb-impl.version>
         <saaj-impl.version>1.5.3</saaj-impl.version>
+        <jsch.version>0.1.55</jsch.version>
         <maven-assembly-plugin.version>3.7.1</maven-assembly-plugin.version>
     </properties>
 
@@ -74,6 +75,11 @@
             <groupId>com.sun.xml.messaging.saaj</groupId>
             <artifactId>saaj-impl</artifactId>
             <version>${saaj-impl.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.jcraft</groupId>
+            <artifactId>jsch</artifactId>
+            <version>${jsch.version}</version>
         </dependency>
     </dependencies>
 
